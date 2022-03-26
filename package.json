@@ -4,10 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./src/app.ts"
+    "start": "nodemon ./src/app.js"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
   }
 }
