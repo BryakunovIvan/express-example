@@ -4,11 +4,13 @@ const crypto = require("crypto");
 
 const id = crypto.randomBytes(16).toString("hex");
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const urlencodedParser = express.urlencoded({extended: false});
 
 let base = [];
+
+app.use(express.json({extended: false}))
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -45,4 +47,6 @@ app.delete('/base', urlencodedParser, (req, res) => {
   res.send(resData)
 })
 
-module.exports = app;
+app.listen(port, () => {
+  console.log(`app listening on port ${port}`)
+})
