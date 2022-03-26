@@ -33,7 +33,6 @@ app.get('/base', (req, res) => {
 app.delete('/base', urlencodedParser, (req, res) => {
   let resData = null;
 
-  console.log(req.body)
   base = base.filter(item => {
     if(item._id === req.body.id) {
       resData = item;
