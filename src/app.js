@@ -45,6 +45,4 @@ app.delete('/base', urlencodedParser, (req, res) => {
   res.send(resData)
 })
 
-app.listen(port, () => {
-  console.log(`app listening on port ${port}`)
-})
+module.exports = app;
